@@ -36,7 +36,7 @@ for i in range(len(items)):
     cont = 0
     d = str(dados)
     
-    # altera type para: DEV, FUNC, QA, UAT
+    # altera type para: DEV, FUNC, QA, UAT.
     '''
     if '] [UAT' in d :
         dados["Type"] = "UAT"
