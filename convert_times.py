@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[33]:
-
-
 import pandas as pd
 import json
 import os
@@ -31,22 +25,11 @@ def ler(arq_json):
 
 for i in range(len(items)):    
     caminho = r"C:\Users\6113871\OneDrive - Thomson Reuters Incorporated\Documents\Thomson Reuters\ADO_roteiro\Impor_ADO\GTMPS-" + items[i]
-    print(caminho)
+
     dados = ler(caminho)
     cont = 0
     d = str(dados)
     
-    # altera type para: DEV, FUNC, QA, UAT.
-    '''
-    if '] [UAT' in d :
-        dados["Type"] = "UAT"
-    if '] [DEV' in d :
-        dados["Type"] = "DEV"
-    if '] [FUNC' in d :
-        dados["Type"] = "FUNC"
-    if '] [QA' in d :
-        dados["Type"] = "QA"
-    '''
         
     # conerte os segundo para horas
     if dados['Revisions'][0]['Fields'][cont]['ReferenceName'] == "Microsoft.VSTS.Scheduling.OriginalEstimate":
@@ -70,47 +53,3 @@ for i in range(len(items)):
     with open(caminho, 'w') as jsonFile:
         json.dump(dados, jsonFile)
         jsonFile.close()
-
-
-# In[29]:
-
-
-import os
-
-Item = []
-pasta = r"C:\Users\6113871\OneDrive - Thomson Reuters Incorporated\Documents\Thomson Reuters\ADO_roteiro\Impor_ADO"
-
-arquivos = os.listdir(pasta) 
-
-for i in range(len(arquivos)):
-    if 'GTMPS' in arquivos[i] :
-        if '.json' in arquivos[i]  :
-            Item.append( arquivos[i][6:] )
-
-
-      
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
