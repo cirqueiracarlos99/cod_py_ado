@@ -68,9 +68,8 @@ for i in range(len(items)):
                     pos[0] = i
                     pos[1] = el
                     
-    if flag == True :               
+    if flag == True :  
         dados['Revisions'][pos[0]]['Fields'][pos[1]]['Value'] = "Impediment"
-
 
 
     with open(caminho, 'w') as jsonFile:
