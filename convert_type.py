@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 import pandas as pd
 import json
 import os
@@ -38,3 +44,10 @@ for i in range(len(items)):
     with open(caminho, 'w') as jsonFile:
         json.dump(dados, jsonFile)
         jsonFile.close()
+
+
+# In[ ]:
+
+
+
+
